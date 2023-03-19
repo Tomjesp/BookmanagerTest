@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xyq.dao.DepartmentMapper">
+
+    <select id="getDepartList" resultType="department">
+        select * from db_bookmanager.department
+    </select>
+
+    <select id="getDepartById" resultType="department">
+        select * from db_bookmanager.department where id = #{id}
+    </select>
+
+    <insert id="addDepart" parameterType="department">
+        insert into db_bookmanager.department (name) values (#{name})
+    </insert>
+
+    <delete id="delDepart">
+        delete from db_bookmanager.department where id = #{id}
+    </delete>
+
+    <update id="updateDepart">
+        update db_bookmanager.department set name = #{name} where id = #{id}
+    </update>
+
+</mapper>
